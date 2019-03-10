@@ -1,8 +1,8 @@
-<a routerLink = "/rentals/{{rentalItem.id}}">
+<a routerLink = "/rentals/{{rentalItem._id}}">
   <div class="card bwm-card">
-    <img class="card-img-top" src="http://via.placeholder.com/350x250" alt="">
+    <img class="card-img-top" src="{{rentalItem.image}}" alt="">
     <div class="card-block">
-      <h6 class="card-subtitle">{{rentalItem.category}} &#183; {{rentalItem.city}}</h6>
+      <h6 class="card-subtitle {{rentalItem.category}}" >{{rentalItem.shared ? 'Shared ' : 'Whole '}}{{rentalItem.category}} &#183; {{rentalItem.city}}</h6>
       <h4 class="card-title">{{rentalItem.title}}</h4>
       <p class="card-text">${{rentalItem.dailyRate}} per Night &#183; Free Cancelation</p>
     </div>
