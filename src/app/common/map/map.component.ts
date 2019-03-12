@@ -19,6 +19,7 @@ export class MapComponent {
 
   mapReadyFunctionCall(){
     this.mapService.geocodelocation(this.location).subscribe((coords)=>{
+      coords = JSON.parse(coords);
       this.lat = coords.lat;
       this.lng = coords.lng;
 
