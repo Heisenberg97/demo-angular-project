@@ -1,0 +1,18 @@
+<agm-map (mapReady) = "mapReadyFunctionCall()" [latitude]="lat" [longitude]="lng">
+  <agm-circle *ngIf = "!isPositionError && lat && lng"
+    [latitude]="lat" 
+    [longitude]="lng"
+    [radius]="8000"
+    [fillColor]="'#F44336'"
+    [fillOpacity]="0.4">
+  </agm-circle>
+
+  <agm-info-window *ngIf = "isPositionError"
+  [latitude]="0" 
+  [longitude]="0"
+  [maxWidth]="300"
+  [isOpen]=true
+  >
+  Oops, Not a proper location specified. Please provide a proper location
+  </agm-info-window>
+</agm-map>
